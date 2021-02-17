@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/spectre.css/dist/spectre.min.css"
+    />
+    <title>Nike SNKRS Early Link Generator</title>
+  </head>
+  <body>
+    <form action="javascript:getEarlyLink()">
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+        "
+      >
+        <h1>Nike SNKRS early link generator</h1>
+        <br />
+
+        <div
+          style="
+            max-width: 50%;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 2rem;
+          "
+        >
+          <input
+            class="form-input"
+            type="text"
+            placeholder="Link"
+            id="normalLink"
+            pattern="https://www.nike.com/my/launch/t/.*"
+            autocomplete="off"
+            required
+            style="width: 80%; margin-right: 2rem"
+          />
+          <input
+            class="form-input"
+            style="width: 20%"
+            type="number"
+            step="0.5"
+            value="8"
+            placeholder="Size"
+            required
+            id="size"
+          />
+        </div>
+        <input
+          type="submit"
+          style="margin-bottom: 2rem"
+          class="btn btn-lg"
+          value="GENERATE"
+        />
+        <span
+          class="code"
+          style="height: 3rem; width: 50%; cursor: pointer"
+          data-lang="Click to Copy"
+          onclick="copyLink()"
+        >
+          <code>
+            <br />
+            <input
+              type="text"
+              value="Please Generate Link First"
+              style="
+                border: none;
+                background: transparent;
+                outline: none;
+                text-align: center;
+                width: 100%;
+              "
+              id="earlyLink"
+            />
+          </code>
+        </span>
+
+        <br /><br /><br /><br /><br />
+      </div>
+    </form>
+  </body>
+  <script src="index.js"></script>
+</html>
