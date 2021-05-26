@@ -1,89 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <title>Digi-X Assessment</title>
-</head>
-<body>
-    <div class='container' style = 'max-width: 80%;'>
-        <div class='row' style='align-items: center; justify-content: center;'>
-            <h1>Counter App</h1>
-        </div>
-        <div class='row d-flex justify-content-center flex-grow-1' style='padding: 100px'>
-            <div class='col d-flex align-items-center justify-content-center'>
-                <button type='button' class='btn btn-primary btn-large' id='leftBtn' onclick='minusValue()'> - </button>
-            </div>
-            <div class="col d-flex justify-content-center align-items-center">
-                <h1 id='countValue'></h1>
-            </div>
-            <div class="col d-flex align-items-center justify-content-center">
-                <button type='button' class='btn btn-primary btn-large' id='rightBtn' onclick='addValue()'> + </button>
-            </div>
-        </div>
-        <div class = 'row d-flex justify-content-center'>
-            <div>
-                <button type='button' class='btn btn-primary btn-block' id='resetBtn' onclick='reset()'> Reset </button>
-            </div>
-        </div>
-        
-        <br/><br/><br/>
-        <div class='row' style='align-items: center; justify-content: center;'>
-            <h1>Weight Converter App</h1>
-        </div>
-        <div class = 'row d-flex justify-content-center'>
-            <div>
-               Input Weight: <input type="text" id='inputKg'> kg
-            </div>
-        </div>
+    <title>Engineering Internship Assessment</title>
+    <meta name="description" content="The HTML5 Herald" />
+    <meta name="author" content="Digi-X Internship Committee" />
 
-        <div class = 'row d-flex justify-content-center'>
-            <div> <span id='pound'></span> <b>Pound</b> </div>
-        </div>
-        <div class = 'row d-flex justify-content-center'>
-            <div> <span id='milligram'></span> <b>Milligram </b> </div>
-        </div>
-        
+    <link rel="stylesheet" href="style.css?v=1.0" />
+    <link rel="stylesheet" href="custom.css?v=1.0" />
+  </head>
+
+  <body>
+    <div class="top-wrapper">
+      <img
+        src="https://assets.website-files.com/5cd4f29af95bc7d8af794e0e/5cfe060171000aa66754447a_n-digi-x-logo-white-yellow-standard.svg"
+        alt="digi-x logo"
+        height="70"
+      />
+      <h1>Engineering Internship Assessment</h1>
     </div>
-</body>
-<script>
-    let counterValue = 0
-    const countElem = document.getElementById("countValue")
-    window.onload = function(){
-        countElem.innerHTML = counterValue;
-    }
 
-    function addValue(){
-        counterValue++
-        countElem.innerHTML = counterValue;
-    }
+    <div class="instruction-wrapper">
+      <h2>What you need to do?</h2>
+      <h3 style="margin-top: 31px">
+        Using this HTML template, create a page that can:
+      </h3>
+      <ol>
+        <li>
+          <b class="yellow">Upload</b> a zip file - containing 5 images (Cats,
+          or Dogs, or even Pokemons)
+        </li>
+        <li>
+          after uploading, <b class="yellow">Extract</b> the zip to get the
+          images
+        </li>
+        <li><b class="yellow">Display</b> the images on this page</li>
+      </ol>
 
-    function minusValue(){
-        counterValue && counterValue--
-        countElem.innerHTML = counterValue;
-    }
+      <h2 style="margin-top: 51px">The rules?</h2>
+      <ol>
+        <li>
+          May use <b class="yellow">any programming language/script</b>. The
+          simplest the better *wink*
+        </li>
+        <li><b class="yellow">Best if this project could be hosted</b></li>
+        <li>
+          <b class="yellow">If you are not hosting</b>, please provide a video
+          as proof (GDrive video link is ok)
+        </li>
+        <li>
+          <b class="yellow">Submit your code</b> by pushing to your own github
+          account, and share the link with us
+        </li>
+      </ol>
+    </div>
 
-    function reset(){
-        counterValue = 0
-        countElem.innerHTML = counterValue;
-    }
+    <!-- MY CODES START HERE -->
+    <div class="display-wrapper">
+      <input
+        type="file"
+        id="compressedFile"
+        accept=".zip"
+        name="compressedFile"
+      />
 
-    //question 2
+      <input type="button" value="Extract" id="btnExtract"></input>
+    </div>
 
-    const poundElem = document.getElementById('pound');
-    const milligramElem = document.getElementById('milligram');
-    document.getElementById('inputKg').onkeyup = function (){
-        poundElem.innerText = (this.value *2.205).toFixed(2);
-        milligramElem.innerText = this.value *1000000;
+    <!-- DO NO REMOVE CODE STARTING HERE -->
+    <div class="display-wrapper">
+      <h2 style="margin-top: 51px">My images</h2>
+      <div class="append-images-here">
+        <p>No image found. Your extracted images should be here.</p>
+        <!-- THE IMAGES SHOULD BE DISPLAYED INSIDE HERE -->
+      </div>
+    </div>
+    <!-- DO NO REMOVE CODE UNTIL HERE -->
 
-    }
-
-</script>
+    <script type="text/javascript" src="zip-fs-full.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
